@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import Product from "./components/Product/Product";
 
 const App = () => {
   const [count, setCount] = useState(1000);
   const [data, setData] = useState(1000);
-  const [product, setProduct]= useState([]);
+  const [products, setProducts]= useState([]);
 
   const handleClick = () => {
     setCount(count + 1000);
@@ -18,7 +19,7 @@ const App = () => {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
       console.log(data);
-       setProduct(data)
+       setProducts(data)
     } catch (error) {
       console.log("Error fetching data:", error.message);
     }
@@ -37,6 +38,13 @@ const App = () => {
       <p>hiiiiiiiii</p>
       <button onClick={handleClick}>click me count</button>
       <button onClick={handleData}>click me data</button>
+
+  
+      <Product name={"Motorolla"} price={21000} rating={4}/>
+      <Product name={"vivo"} price={11000} rating={3.5}/>
+      <Product name={"Oneplus"} price={31000} rating={4.5}/>
+      <Product name={"Nokia"} />
+    
     </div>
   );
 };

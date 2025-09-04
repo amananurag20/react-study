@@ -1,18 +1,17 @@
-import "./Product.css"
+import HomePage from "../HomePage/HomePage";
+import "./Product.css";
 
-function Product() {
-  return <>
+function Product({name, price=10000,rating=3.8}) {
+  
+  return (
+    <>
+      <h1>Mobile name: {name}</h1>
+      <h3>Price : {price}</h3>
+      <p>rating {rating} star</p>
 
-   <h1>Product page hai ye</h1>
-    <h1 >Product sensation</h1>
-  </>;
+    
+    </>
+  );
 }
 
-
-
 export default Product;
-
-
-
-
-
