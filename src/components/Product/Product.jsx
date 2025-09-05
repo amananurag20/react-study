@@ -1,14 +1,16 @@
 import HomePage from "../HomePage/HomePage";
 import "./Product.css";
 
-function Product({name, price=10000,rating=3.8}) {
+function Product(props) {
   
   return (
     <>
-      <h1>Mobile name: {name}</h1>
-      <h3>Price : {price}</h3>
-      <p>rating {rating} star</p>
-
+     <div className="product-box">
+            <img src={props.item.image} className="product-image"></img>
+            <h1>{props.item.title}</h1>
+            <p>{props.item.description}</p>
+            <h3>Price {props.item.price}</h3>
+          </div>
     
     </>
   );
