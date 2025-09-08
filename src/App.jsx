@@ -26,7 +26,13 @@ const App = () => {
   };
 
 const handleSubmit=(e)=>{
-  e.preventDefault()
+  e.preventDefault();
+
+  const email=e.target[0].value;
+  const password=e.target[1].value;
+  const phone=e.target[2].value;
+
+  console.log(email,password, phone)
 }
 
   return (
@@ -36,9 +42,7 @@ const handleSubmit=(e)=>{
         <input
           placeholder="your name"
           type="text"
-          id="email"
-          value={formData.email}
-          onChange={handleChange}
+          id="email"         
           name="email"
         />
 
@@ -46,9 +50,7 @@ const handleSubmit=(e)=>{
         <input
           placeholder="your name"
           type="password"
-          id="password"
-          onChange={handleChange}
-          value={formData.password}
+          id="password"        
           name="password"
         />
 
@@ -56,14 +58,14 @@ const handleSubmit=(e)=>{
         <input
           placeholder="your name"
           type="number"
-          id="phone"
-          onChange={handleChange}
-          value={formData.phone}
+          id="phone"      
           name="phone"
         />
 
         <button  onClick={handleClick}>Submit form</button>
       </form>
+
+     
     </div>
   );
 };
